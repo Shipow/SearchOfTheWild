@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import InstantSearch from 'vue-instantsearch';
 
+
+
 Vue.use(InstantSearch);
 
 new Vue({
@@ -48,8 +50,8 @@ Vue.component('effect-meter', {
 
         var width = this.iconWidth;
         var potential = parseFloat(this.potential);
-        var effect = this.effect;
-        var x = '<img src="src/assets/icons/icon-effect-' + effect.toString().toLowerCase() + '.svg" width="' + width + '">&nbsp;' + effect;
+        var effect = this.effect.toString().toLowerCase();
+        var x = '<img src="src/assets/icons/icon-effect-' + effect + '.svg" width="' + width + '">&nbsp;' + this.effect;
 
         var effects_config = {
           energizing: {
@@ -57,8 +59,8 @@ Vue.component('effect-meter', {
             steps: [5,4,3,2,1]
           },
           hearthy: {
-            short: "extraHp",
-            steps: [20,4,3,2,1]
+            short: "extraHP",
+            steps: [1]
           },
           enduring: {
             short: "sta",
@@ -70,7 +72,7 @@ Vue.component('effect-meter', {
           }
         };
 
-        if (effect === "energizing" || effect === "hearthy" || effect === "enduring") {
+        if (effect === "energizing" || effect === "hearty" || effect === "enduring") {
             effect = effects_config[effect];
         } else {
             effect = effects_config.default;
