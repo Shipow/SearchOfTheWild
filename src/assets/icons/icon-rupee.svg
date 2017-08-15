@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-rupee</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="9.20683367 0.271814944 18.2925663 8.68346701 18.2925663 25.5067711 9.20683367 33.9184232 0.121101086 25.5067711 0.121101086 8.68346701"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-240.000000, 0.000000)">
+            <g id="rupee" transform="translate(251.000000, 3.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Polygon" fill="#2DDE98" xlink:href="#path-1"></use>
+                <g id="Group-5" mask="url(#mask-2)">
+                    <g transform="translate(-9.354153, -12.401441)" id="Polygon">
+                        <polygon fill="#15A96E" points="6.36770445 17.5451162 12.5378603 23.4136749 12.5378603 35.1507922 6.36770445 41.0193509 0.197548642 35.1507922 0.197548642 23.4136749"></polygon>
+                        <polygon fill="#085C3B" points="12.5378603 34.9046383 18.7080161 40.773197 18.7080161 52.5103143 12.5378603 58.3788729 6.36770445 52.5103143 6.36770445 40.773197"></polygon>
+                        <polygon fill="#1F865D" points="24.6911812 34.9046383 30.861337 40.773197 30.861337 52.5103143 24.6911812 58.3788729 18.5210254 52.5103143 18.5210254 40.773197"></polygon>
+                        <polygon fill="#15A96E" points="30.6743464 17.5451162 36.8445022 23.4136749 36.8445022 35.1507922 30.6743464 41.0193509 24.5041906 35.1507922 24.5041906 23.4136749"></polygon>
+                        <polygon fill="#085C3B" points="24.4009097 0.0958518988 30.5710655 5.96441055 30.5710655 17.7015279 24.4009097 23.5700865 18.2307539 17.7015279 18.2307539 5.96441055"></polygon>
+                        <polygon fill="#AFFFDF" points="12.5378603 0.523675765 18.7080161 6.39223442 18.7080161 18.1293517 12.5378603 23.9979104 6.36770445 18.1293517 6.36770445 6.39223442"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
