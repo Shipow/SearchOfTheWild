@@ -137,7 +137,7 @@ export default {
 
   .menu-class
     position: relative
-    color: white
+    color: $text-color
     display: block
     font-size: 16px
     font-weight: bold
@@ -169,25 +169,22 @@ export default {
       background: url('../src/assets/icons/icon-weapon.svg') no-repeat
       background-size: 100%
 
-  .ais-tree-menu__list ul
-    margin-bottom: 12px
-    .menu-class
-      font-size: 13px
-      font-weight: bold
-      color: rgba(white,.6)
+  .ais-tree-menu__list
+    .ais-tree-menu__item--active .menu-class
+      color: #2CDD9B
       &::before
-        background: url('../src/assets/icons/icon-bullet-right.svg') no-repeat
-        background-size: 100%
+    ul
+      margin-bottom: 12px
+      .menu-class.menu-class
+        font-size: 13px
+        font-weight: bold
+        color: $text-color
+        &::before
+          background: url('../src/assets/icons/icon-bullet-right.svg') no-repeat
+          background-size: 100%
 
-
-
-  // .ais-tree-menu	//Container class
-  // .ais-tree-menu__list	//The root level list class
-  // .ais-tree-menu__item	//A refinement option
-  // .ais-tree-menu__item–active	//An active refinement option
-  // .ais-tree-menu__value	//A refinement option value
-  // .ais-tree-menu__count
-  //   float: right
+      .ais-tree-menu__item--active .menu-class
+        color: #2CDD9B
 
   //helpers
   .has-no-padding-top
@@ -196,5 +193,7 @@ export default {
     padding-bottom: 0 !important
   .spacer8
     height: 8px
+  .spacer16
+    height: 16px
 
 </style>

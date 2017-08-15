@@ -2,8 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import InstantSearch from 'vue-instantsearch';
 
-
-
 Vue.use(InstantSearch);
 
 new Vue({
@@ -46,11 +44,12 @@ Vue.component('effect-meter', {
   props: ['effect', 'potential', 'icon-width'],
   computed: {
     x() {
-      if (this.potential && this.effect) {
+
+      if (this.effect) {
 
         var width = this.iconWidth;
-        var potential = parseFloat(this.potential);
-        var effect = this.effect.toString().toLowerCase();
+        var potential = parseFloat(this.potential) || false;
+        var effect = this.effect.toLowerCase();
         var x = '<img src="src/assets/icons/icon-effect-' + effect + '.svg" width="' + width + '">&nbsp;' + this.effect;
 
         var effects_config = {
@@ -58,13 +57,13 @@ Vue.component('effect-meter', {
             short: "sta",
             steps: [5,4,3,2,1]
           },
-          hearthy: {
-            short: "extraHP",
+          hearty: {
+            short: "extraHp",
             steps: [1]
           },
           enduring: {
-            short: "sta",
-            steps: [5,4,3,2,1]
+            short: "extraSta",
+            steps: [5,4,3,2,1,.5]
           },
           default: {
             short: "lvl",
@@ -78,22 +77,23 @@ Vue.component('effect-meter', {
             effect = effects_config.default;
         }
 
-
-        while (potential !== 0){
-          effect.steps.forEach(
-            function(effect_icon){
-              if (potential / effect_icon >= 1){
-                var n = parseInt(potential / effect_icon);
-                potential = potential - (n * effect_icon);
-                for (var i = 0; i < n; i++){
-                  x += '&nbsp;<img src="src/assets/icons/icon-' + effect.short + effect_icon + '.svg" width="' + width + '">';
+        if (potential){
+          while (potential !== 0){
+            effect.steps.forEach(
+              function(effect_icon){
+                if (potential / effect_icon >= 1){
+                  var n = parseInt(potential / effect_icon);
+                  potential = potential - (n * effect_icon);
+                  for (var i = 0; i < n; i++){
+                    x += '&nbsp;<img src="src/assets/icons/icon-' + effect.short + effect_icon + '.svg" width="' + width + '">';
+                  }
                 }
               }
-            }
-          )
+            )
+          }
         }
-        return x;
       }
+      return x;
     }
   }
 })
