@@ -46,18 +46,58 @@
                   <h2><ais-highlight :result="result" attribute-name="name"></ais-highlight></h2>
 
                   <p>{{result.description}}</p>
-                  <div class="spacer8"></div>
-                  <div class="spacer8"></div>
+
+                  <div class="spacer16"></div>
+
                   <section v-if="result.hp_cooked || result.effect_cooked || result.duration_bonus_cooked" class="cooking">
                     <div class="stat-label">Bonus when Cooked</div>
                     <div class="spacer8"></div>
                     <hp-meter v-if="result.hp_cooked" class="tag" :hp="result.hp_cooked" icon-width="16px"></hp-meter>
                     <effect-meter v-if="result.effect_cooked" :effect="result.effect_cooked" :potential="result.potential" icon-width="16px"></effect-meter>
                     <span v-if="result.duration_bonus_cooked" class="tag" v-for="time in result.duration_bonus_cooked "><img src="src/assets/icons/icon-time.svg" width="16px"> {{ time }}</span>
+                    <div class="spacer8"></div>
+                  </section>
+
+                  <section v-if="result.food_recipe" class="cooking">
+                    <div class="spacer16"></div>
+                    <div class="stat-label">Recipes</div>
+                    <div class="spacer8"></div>
+                    <ul class="related-hits">
+                      <li v-for="recipe in result.food_recipe ">
+                        <img :src="recipe.icon_url" width="20px"> {{ recipe.name }}
+                      </li>
+                    </ul>
+                    <div class="spacer8"></div>
+                  </section>
+
+                  <section v-if="result.ingredients" class="cooking">
+                    <div class="spacer16"></div>
+                    <div class="stat-label">Ingredients</div>
+                    <div class="spacer8"></div>
+                    <ul class="related-hits">
+                      <li v-for="material in result.ingredients ">
+                        <img :src="material.icon_url" width="20px"> {{ material.name }}
+                      </li>
+                    </ul>
+                    <div class="spacer8"></div>
                   </section>
 
                   <div v-if="result.bonus"><span class="tag">{{ result.bonus }}</span></div>
-                  <div v-if="result.bonus_set"><span class="tag">Set: {{ result.bonus_set }}</span></div>
+                  <div v-if="result.bonus_set"><span class="tag">{{ result.bonus_set }} – Set Bonus</span></div>
+
+                  <section v-if="result.upgrade_material" class="armor">
+                    <div class="spacer16"></div>
+                    <div class="stat-label">Armor Upgrade</div>
+                    <div class="spacer8"></div>
+                    <ul class="related-hits">
+                      <li v-for="material in result.upgrade_material ">
+                        <img :src="material.icon_url" width="20px"> {{ material.name }}
+                      </li>
+                    </ul>
+                    <div class="spacer8"></div>
+                  </section>
+
+
 
                 </div>
               </div>
@@ -134,6 +174,14 @@ export default {
       vertical-align: middle
       position: relative
       top: -2px
+
+    .related-hits
+      font-size: 12px
+      color: rgba($text-color,.5)
+      li
+        margin-bottom: 4px
+      img
+        vertical-align: middle
 
   .menu-class
     position: relative
