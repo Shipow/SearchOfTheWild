@@ -44,7 +44,11 @@
                   </div>
 
                   <h2><ais-highlight :result="result" attribute-name="name"></ais-highlight></h2>
-                  <div class="item-categorie">{{result.class}}<span v-if="result.subclass"> / {{result.subclass}}</span></div>
+                  <div class="item-categorie">
+                    {{result.class}}
+                    <span v-if="result.subclass"> / {{result.subclass}}</span>
+
+                  </div>
 
                   <p>{{result.description}}</p>
 
@@ -56,6 +60,11 @@
                     <hp-meter v-if="result.hp_cooked" class="tag" :hp="result.hp_cooked" icon-width="16px"></hp-meter>
                     <effect-meter v-if="result.effect_cooked" :effect="result.effect_cooked" :potential="result.potential" icon-width="16px"></effect-meter>
                     <span v-if="result.duration_bonus_cooked" class="tag" v-for="time in result.duration_bonus_cooked "><img src="src/assets/icons/icon-time.svg" width="16px"> {{ time }}</span>
+                    <span v-if="result.subclass === 'Monster Part' || result.subclass === 'Critter'">
+                      <span class="tag">
+                        <img src="src/assets/icons/icon-monster.svg" width=16>
+                      </span>
+                    </span>
                     <div class="spacer8"></div>
                   </section>
 
@@ -85,18 +94,6 @@
 
                   <div v-if="result.bonus"><span class="tag">{{ result.bonus }}</span></div>
                   <div v-if="result.bonus_set"><span class="tag">{{ result.bonus_set }} – Set Bonus</span></div>
-
-                  <section v-if="result.upgrade_material" class="armor">
-                    <div class="spacer16"></div>
-                    <div class="stat-label">Fairy Enhancement</div>
-                    <div class="spacer8"></div>
-                    <ul class="related-hits">
-                      <li v-for="material in result.upgrade_material ">
-                        <img :src="material.img" width="20px"> {{ material.name }}
-                      </li>
-                    </ul>
-                    <div class="spacer8"></div>
-                  </section>
 
                   <section v-if="result.armor_upgrade" class="armor">
                     <div class="spacer16"></div>
@@ -167,6 +164,9 @@ export default {
       border: solid 1px rgba($text-color,.1)
       background: none
       color: $text-color
+      font-size: 12px
+      letter-spacing: .5px
+      font-weight: bold
       padding: 0 8px
     .stat
       margin-bottom: 4px
