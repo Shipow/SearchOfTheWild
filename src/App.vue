@@ -44,6 +44,7 @@
                   </div>
 
                   <h2><ais-highlight :result="result" attribute-name="name"></ais-highlight></h2>
+                  <div class="item-categorie">{{result.class}}<span v-if="result.subclass"> / {{result.subclass}}</span></div>
 
                   <p>{{result.description}}</p>
 
@@ -64,7 +65,7 @@
                     <div class="spacer8"></div>
                     <ul class="related-hits">
                       <li v-for="recipe in result.food_recipe ">
-                        <img :src="recipe.icon_url" width="20px"> {{ recipe.name }}
+                        <img :src="recipe.img" width="20px"> {{ recipe.name }}
                       </li>
                     </ul>
                     <div class="spacer8"></div>
@@ -76,7 +77,7 @@
                     <div class="spacer8"></div>
                     <ul class="related-hits">
                       <li v-for="material in result.ingredients ">
-                        <img :src="material.icon_url" width="20px"> {{ material.name }}
+                        <img :src="material.img" width="20px"> {{ material.name }}
                       </li>
                     </ul>
                     <div class="spacer8"></div>
@@ -87,17 +88,27 @@
 
                   <section v-if="result.upgrade_material" class="armor">
                     <div class="spacer16"></div>
-                    <div class="stat-label">Armor Upgrade</div>
+                    <div class="stat-label">Fairy Enhancement</div>
                     <div class="spacer8"></div>
                     <ul class="related-hits">
                       <li v-for="material in result.upgrade_material ">
-                        <img :src="material.icon_url" width="20px"> {{ material.name }}
+                        <img :src="material.img" width="20px"> {{ material.name }}
                       </li>
                     </ul>
                     <div class="spacer8"></div>
                   </section>
 
-
+                  <section v-if="result.armor_upgrade" class="armor">
+                    <div class="spacer16"></div>
+                    <div class="stat-label">Fairy Enhancement</div>
+                    <div class="spacer8"></div>
+                    <ul class="related-hits">
+                      <li v-for="material in result.armor_upgrade ">
+                        <img :src="material.img" width="20px"> {{ material.name }}
+                      </li>
+                    </ul>
+                    <div class="spacer8"></div>
+                  </section>
 
                 </div>
               </div>
@@ -120,12 +131,12 @@ export default {
 }
 </script>
 
-
 <style lang="sass" src="bulma"></style>
 
 <style lang="sass">
 
   $text-color: #E3E5C9
+  //@import url("assets/fonts/font-calamity") // bug: parsed by css :/
 
   html
     height: 100%
@@ -133,6 +144,7 @@ export default {
   body
     background: #050F2C
     color: $text-color
+    font-family: Calamity, sans-serif
 
   //Bulma override
   .hits-wrapper > .column
@@ -146,7 +158,7 @@ export default {
     h2
       font-size: 16px
       font-weight: bold
-      margin-bottom: 12px
+      margin-bottom: 4px
       em
         color: #B97433
         font-style: normal
@@ -174,6 +186,16 @@ export default {
       vertical-align: middle
       position: relative
       top: -2px
+
+    .icon-effect
+      margin-right: 4px
+
+    .item-categorie
+      font-size: 11px
+      text-transform: uppercase
+      font-weight: bold
+      color: rgba(#2CDD9B,.6)
+      margin-bottom: 8px
 
     .related-hits
       font-size: 12px

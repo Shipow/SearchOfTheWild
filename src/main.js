@@ -50,7 +50,10 @@ Vue.component('effect-meter', {
         var width = this.iconWidth;
         var potential = parseFloat(this.potential) || false;
         var effect = this.effect.toLowerCase();
-        var x = '<img src="src/assets/icons/icon-effect-' + effect + '.svg" width="' + width + '">&nbsp;' + this.effect;
+        var x = "";
+        if (effect !== "hearty"){
+          x += '<img class="icon-effect" src="src/assets/icons/icon-effect-' + effect + '.svg" width="' + width + '">&nbsp;' + this.effect + '&nbsp;';
+        }
 
         var effects_config = {
           energizing: {
@@ -85,7 +88,7 @@ Vue.component('effect-meter', {
                   var n = parseInt(potential / effect_icon);
                   potential = potential - (n * effect_icon);
                   for (var i = 0; i < n; i++){
-                    x += '&nbsp;<img src="src/assets/icons/icon-' + effect.short + effect_icon + '.svg" width="' + width + '">';
+                    x += '<img src="src/assets/icons/icon-' + effect.short + effect_icon + '.svg" width="' + width + '">';
                   }
                 }
               }
