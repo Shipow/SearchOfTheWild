@@ -135,11 +135,11 @@ export default {
   $text-color: #E3E5C9
   //@import url("assets/fonts/font-calamity") // bug: parsed by css :/
 
-  html
+  html, body
     height: 100%
+    background: #050F2C
 
   body
-    background: #050F2C
     color: $text-color
     font-family: Calamity, sans-serif
 
