@@ -21,6 +21,8 @@
 
         <aside class="column is-3">
           <div class="spacer16"></div>
+          <img src="src/assets/search-of-the-wild.svg" alt="" width=250>
+          <div class="spacer16"></div>
           <ais-search-box>
             <form novalidate="novalidate" onsubmit="return false;" class="searchbox sbx-vue-searchbox">
               <div role="search" class="sbx-vue-searchbox__wrapper">
@@ -47,7 +49,17 @@
 
           <!-- <h3>Tags</h3>
           <ais-refinement-list attribute-name="effect_cooked" operator="and"></ais-refinement-list> -->
-
+          <div class="spacer16"></div>
+          <div class="spacer16"></div>
+          <div class="infos">
+            <p>Project in development.<br/>Built with <a href="https://github.com/algolia/vue-instantsearch">InstantSearch for Vue.js</a></p>
+            <div class="spacer8"></div>
+            <ul>
+              <li>Data: <a href="https://airtable.com/invite/l?inviteId=invYLYtc2ZNcLVHOt&inviteToken=1dc01c126c9100d83b643f451fb00eb3">Airtable</a></li>
+              <li>Code: <a href="https://github.com/Shipow/SearchOfTheWild">Github</a></li>
+              <li>Myself: <a href="https://twitter.com/Kevin_Granger/status/911924069825699840">Twitter</a></li>
+            </ul>
+          </div>
         </aside>
 
         <main class="column is-9">
