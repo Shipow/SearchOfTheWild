@@ -2,13 +2,13 @@
 
 > Zelda BotW Search
 
-(http://res.cloudinary.com/hilnmyskv/image/upload/v1507137808/search-of-the-wild/logo.png)
+![Search of the Wild Logo](http://res.cloudinary.com/hilnmyskv/image/upload/v1507137808/search-of-the-wild/logo.png)
 
-(http://res.cloudinary.com/hilnmyskv/image/upload/v1507137808/search-of-the-wild/screenshot.png)
+![Search of the Wild Screenshot](http://res.cloudinary.com/hilnmyskv/image/upload/v1507137808/search-of-the-wild/screenshot.png)
 
-## Preview (thanks Netlify)
+## Preview
 
-[Search of the Wild – Preview](http://piano-tuner-protection-77534.netlify.com/)
+[Search of the Wild – Preview on Netlify](http://piano-tuner-protection-77534.netlify.com/)
 
 ## Build Setup
 
@@ -33,7 +33,7 @@ Then data is pushed to Algolia with a node script [data/import.js](https://githu
 UI is built with [vue-instantsearch](https://github.com/algolia/vue-instantsearch) and [Bulma.io](http://bulma.io/)
 You can find all the sprites in .sketch file in the design directory.
 
-(http://res.cloudinary.com/hilnmyskv/image/upload/v1507137807/search-of-the-wild/artboard.png)
+![Search of the Wild Assets](http://res.cloudinary.com/hilnmyskv/image/upload/v1507137807/search-of-the-wild/artboard.png)
 
 
 ## vue-loader
