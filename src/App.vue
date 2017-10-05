@@ -403,6 +403,7 @@ export default {
       white-space: normal;
       color: $font-color;
       font-size: inherit;
+      -webkit-appearance: none;
       appearance: none;
 
       &::-webkit-search-decoration,
